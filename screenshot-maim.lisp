@@ -16,8 +16,7 @@
                       (maim-gen-filename))))
     (when filename
       (stumpwm::unmap-all-message-windows)
-      (multiple-value-bind
-            (_ err-text err-code)
+      (multiple-value-bind (_ err-text err-code)
           (uiop:run-program (format nil "maim ~a --delay=~f --quality=~d ~a ~a"
                                     args
                                     *delay*
@@ -33,8 +32,7 @@
 
 
 (defun maim-gen-filename ()
-  (multiple-value-bind
-	      (second minute hour day month year)
+  (multiple-value-bind (second minute hour day month year)
 	    (get-decoded-time)
     (concat
      *path*
