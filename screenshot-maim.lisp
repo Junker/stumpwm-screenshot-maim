@@ -15,7 +15,7 @@
                       (read-one-line (current-screen) "Filename: " :initial-input *path*)
                       (maim-gen-filename))))
     (when filename
-      (stumpwm::unmap-all-message-windows)
+      (stumpwm::unmap-message-window (current-screen))
       (multiple-value-bind (_ err-text err-code)
           (uiop:run-program (format nil "maim ~a --delay=~f --quality=~d ~a ~a"
                                     args
