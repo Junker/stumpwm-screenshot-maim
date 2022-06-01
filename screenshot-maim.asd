@@ -1,4 +1,4 @@
-;;;; pamixer.asd
+;;;; screenshot-maim.asd
 
 (asdf:defsystem #:screenshot-maim
   :description "Screenshot module for StumpWM"
