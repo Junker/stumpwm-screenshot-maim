@@ -3,6 +3,8 @@
 (defparameter *path* "/var/tmp/") ; default save path. must be with a leading and trailing slash
 (defparameter *format* "png")  ; if *ask-filename* is nil. Currently supports `png`, `jpg`, `bmp` and `webp`.
 (defparameter *ask-filename* t)
+(defparameter *save-to-clipboard* nil)
+(defparameter *xclip-selection* "clipboard")
 (defparameter *delay* 0.2)
 (defparameter *hide-cursor* nil)
 (defparameter *quality* 10) ; An integer from 1 to 10 that determines the compression quality.
@@ -26,6 +28,14 @@
                             :ignore-error-status t
                             :error-output '(:string :stripped t)
                             :output nil)
+            (when (and (eq err-code 0) *save-to-clipboard*)
+              (uiop:run-program (format nil "xclip -selection ~a -target image/~a ~a"
+                                        *xclip-selection*
+                                        *format*
+                                        filename)
+                                :ignore-error-status t
+                                :error-output '(:string :stripped t)
+                                :output nil))
         (if (eq err-code 0)
             (message (format nil "Screenshotted to ~a" filename))
             (message err-text))))))
