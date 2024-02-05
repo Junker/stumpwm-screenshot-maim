@@ -27,7 +27,7 @@
                             :error-output '(:string :stripped t)
                             :output nil)
         (if (eq err-code 0)
-            (message (format nil "Screenshotted to ~a" filename))
+            (message "Screenshotted to ~a" filename)
             (message err-text))))))
 
 
