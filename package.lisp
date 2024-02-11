@@ -5,6 +5,8 @@
   (:export #:*path*
            #:*format*
            #:*ask-filename*
+           #:*save-to-clipboard*
+           #:*xclip-selection*
            #:*delay*
            #:*hide-cursor*
            #:*quality*))
