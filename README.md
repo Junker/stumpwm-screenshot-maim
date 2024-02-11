@@ -33,7 +33,6 @@ git clone https://github.com/Junker/stumpwm-screenshot-maim screenshot-maim
 - **screenshot-maim:\*path\*** - path to save screens (default: "/var/tmp/")
 - **screenshot-maim:\*ask-filename\*** - show input prompt with filename (default: t)
 - **screenshot-maim:\*save-to-clipboard\*** - save the screenshot into clipboard (default: nil)
-- **screenshot-maim:\*save-to-clipboard\*** - save the screenshot into clipboard (default: nil)
 - **screenshot-maim:\*xclip-selection\*** - used selection for saving screenshots (default: "clipboard")
 - **screenshot-maim:\*format\*** - file format, if \*ask-filename\* is nil.
 (default: "png". Currently supports 'png', 'jpg', 'bmp' and 'webp')
